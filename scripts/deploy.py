@@ -1,5 +1,5 @@
 from brownie import FundMe, network, config, MockV3Aggregator
-from scripts.helpful_script import getAccount, deploy_mocks, LOCAL_BLOCKCHAIN_ENVIRONMENT
+from scripts.helpful_script import getAccount, LOCAL_BLOCKCHAIN_ENVIRONMENT
 from scripts.deploy_mocks import deploy_mocks
 
 

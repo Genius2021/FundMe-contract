@@ -1,6 +1,7 @@
 from brownie import (
     MockV3Aggregator,
     network,
+    config
 )
 from scripts.helpful_script import (
     getAccount,
@@ -19,7 +20,7 @@ def deploy_mocks():
         print(f"The active network is {network.show_active()}")
         print("Deploying Mocks...")
         account = getAccount()
-        MockV3Aggregator.deploy(DECIMALS, INITIAL_VALUE, {"from": account})
+        MockV3Aggregator.deploy(DECIMALS, INITIAL_VALUE, {"from": account}, publish_source=config["networks"][network.show_active()].get("verify", False))
         print("Mocks Deployed!")
 
 
